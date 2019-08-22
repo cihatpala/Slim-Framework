@@ -12,7 +12,5 @@
                 return null;
             }
             return $this->con;
-            echo "Bağlandı.";
-        
         }
     } 
