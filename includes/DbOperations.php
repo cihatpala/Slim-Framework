@@ -104,6 +104,18 @@
                 return PASSWORD_DO_NOT_MATCH;
             }
         }
+
+        public function deleteUser($id){
+            $smtm  = $this->con->prepare("DELETE FROM users WHERE id=?");
+            $smtm->bind_param("i",$id);
+            if($smtm->execute()){
+                return true;
+                
+            return false;
+
+            }
+
+        }
         
         private function isEmailExist($email){
             $stmt = $this->con->prepare("SELECT id, email, password, name, school FROM users WHERE email=?");
